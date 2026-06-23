@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 31% 6%;
+  --foreground: 210 20% 96%;
+  --card: 220 22% 10%;
+  --card-foreground: 210 20% 96%;
+  --popover: 220 22% 10%;
+  --popover-foreground: 210 20% 96%;
+  --primary: 188 88% 63%;
+  --primary-foreground: 216 28% 8%;
+  --secondary: 32 73% 65%;
+  --secondary-foreground: 216 28% 8%;
+  --muted: 218 18% 18%;
+  --muted-foreground: 215 16% 73%;
+  --accent: 151 56% 62%;
+  --accent-foreground: 216 28% 8%;
+  --destructive: 0 75% 58%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 18% 20%;
+  --input: 220 18% 20%;
+  --ring: 188 88% 63%;
+  --radius: 1.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(73, 201, 240, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(244, 185, 94, 0.14), transparent 24%),
+    linear-gradient(180deg, #050816 0%, #0a1020 38%, #07111d 100%);
+  color: hsl(var(--foreground));
+  font-feature-settings: "ss01" 1, "cv01" 1, "cv02" 1;
+  text-rendering: optimizeLegibility;
+}
+
+body::selection {
+  background: rgba(73, 201, 240, 0.25);
+}
+
+a {
+  @apply transition-all duration-300;
+}
+
+.page-shell {
+  @apply mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8;
+}
+
+.surface-blur {
+  background: rgba(8, 16, 32, 0.62);
+  backdrop-filter: blur(24px);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.aurora-border {
+  position: relative;
+}
+
+.aurora-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(84, 203, 244, 0.55), rgba(244, 185, 94, 0.24), rgba(96, 219, 163, 0.42));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-space {
+  @apply py-20 md:py-28;
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
