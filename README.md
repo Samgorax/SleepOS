@@ -175,3 +175,26 @@ Next Target:
 ➡ Dynamic Products
 ➡ Frontend ↔ Backend Integration
 ➡ AI Intelligence Layer
+
+
+
+Terminal 1 — Backend
+
+cd D:\shree-ram-mattresses\sleepos-platform\backend
+.\venv\Scripts\activate
+python -m uvicorn app.main:app --reload
+Terminal 2 — Frontend
+
+cd D:\shree-ram-mattresses\sleepos-platform\frontend
+npm run dev
+Terminal 3 — AI Service (jab use karna ho)
+
+cd D:\shree-ram-mattresses\sleepos-platform\ai-services
+.\venv\Scripts\activate
+python -m uvicorn app.main:app --reload --port 8100
+Open:
+
+Frontend      → http://localhost:3000
+Backend Docs  → http://127.0.0.1:8000/docs
+AI Service    → http://127.0.0.1:8100/docs
+![Uploading image.png…]()
